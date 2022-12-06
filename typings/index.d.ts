@@ -2,6 +2,7 @@ import 'egg';
 
 declare module 'egg' {
     interface Application {
-        jwt: any
+        jwt: any;
+        mysql: any;
     }
 }

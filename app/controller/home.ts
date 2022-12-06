@@ -25,7 +25,6 @@ export default class HomeController extends Controller {
 
   public async testToken() {
     const { ctx } = this;
-    console.log(ctx.state.user, 'user');
     if (ctx.state.user && new Date().getTime() / 1000 > ctx.state.user.iat) {
     }
   }

@@ -1,8 +1,7 @@
 import { Application } from 'egg';
 
 export default (app: Application) => {
-  const { controller, router, middleware, jwt } = app;
-  const jwtErr = middleware.jwtErr(jwt);
+  const { controller, router } = app;
   router.post('/login', controller.home.login);
-  router.get('/test', jwtErr, controller.home.testToken);
+  router.get('/test', controller.home.testToken);
 };
