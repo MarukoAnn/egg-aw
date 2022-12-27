@@ -16,16 +16,25 @@ export default class HomeController extends Controller {
         ctx.body = {
           code: 200,
           message: '登陆成功',
-          data: { token }
+          data: { token },
+        };
+      } else {
+        ctx.body = {
+          code: 200,
+          message: '用户名或者密码错误',
+          data: null,
         };
       }
-
     }
   }
 
   public async testToken() {
     const { ctx } = this;
-    if (ctx.state.user && new Date().getTime() / 1000 > ctx.state.user.iat) {
-    }
+    console.log(ctx.state, 'user');
+    ctx.body = {
+      code: 200,
+      message: '测试成功',
+      data: null,
+    };
   }
 }

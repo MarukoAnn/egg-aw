@@ -15,6 +15,7 @@ import 'egg-static';
 import 'egg-jsonp';
 import 'egg-view';
 import 'egg-mysql';
+import 'egg-sequelize';
 import 'egg-jwt';
 import 'egg-cors';
 import { EggPluginItem } from 'egg';
@@ -33,6 +34,7 @@ declare module 'egg' {
     jsonp?: EggPluginItem;
     view?: EggPluginItem;
     mysql?: EggPluginItem;
+    sequelize?: EggPluginItem;
     jwt?: EggPluginItem;
     cors?: EggPluginItem;
   }

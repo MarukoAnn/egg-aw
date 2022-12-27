@@ -16,18 +16,27 @@ export default (appInfo: EggAppInfo) => {
   };
 
   // 配置数据库
-  config.mysql = {
-    client: {
-      host: 'localhost',
-      port: '3306',
-      user: 'root',
-      password: '123456',
-      database: 'spring',
-    },
-    // 是否加载到app上，默认开启
-    app: true,
-    // 是否加载到agent上，默认关闭
-    agent: false,
+  // config.mysql = {
+  //   client: {
+  //     host: 'localhost',
+  //     port: '3306',
+  //     user: 'root',
+  //     password: '123456',
+  //     database: 'spring',
+  //   },
+  //   // 是否加载到app上，默认开启
+  //   app: true,
+  //   // 是否加载到agent上，默认关闭
+  //   agent: false,
+  // };
+
+  config.sequelize = {
+    dialect: 'mysql',
+    host: 'localhost',
+    port: 3306,
+    database: 'spring',
+    username: 'root',
+    password: '123456',
   };
 
   // 配置jwt

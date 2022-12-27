@@ -11,6 +11,10 @@ const plugin: EggPlugin = {
     enable: true,
     package: 'egg-mysql',
   },
+  sequelize: {
+    enable: true,
+    package: 'egg-sequelize',
+  },
   // 配飾jwt
   jwt: {
     enable: true,
