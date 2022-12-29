@@ -7,4 +7,6 @@ export default (app: Application) => {
   // 小说类型
   router.get('/queryTypeList', controller.novelTypeController.queryNovelTypeList);
   router.post('/addTypeInfo', controller.novelTypeController.addNovelTypeInfo);
+  router.post('/updateTypeInfo', controller.novelTypeController.updateNovelType);
+  router.post('/deleteTypeInfo', controller.novelTypeController.deleteNovelType);
 };

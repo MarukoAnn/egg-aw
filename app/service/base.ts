@@ -48,9 +48,10 @@ export default class BaseService extends Service {
     const { ctx } = this;
     try {
       const result = await ctx.model[modelName].findByPk(json.id);
+      console.log(json, 'result');
       if (!result) return false;
       await result.update({ ...json });
-      return "编辑成功";
+      return true;
     } catch (error) {
       return "Server error";
     }
@@ -63,7 +64,7 @@ export default class BaseService extends Service {
       const result = await ctx.model[modelName].findByPk(key);
       if (!result) return false;
       await result.destroy();
-      return "删除成功";
+      return true;
     } catch (error) {
       return "Server error";
     }
