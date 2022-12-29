@@ -36,10 +36,9 @@ export default class BaseService extends Service {
     const { ctx } = this;
     try {
       console.log(ctx.model, 'modelName');
-      await ctx.model[modelName].insert(json);
-      return "新增成功";
+      await ctx.model[modelName].create(json);
+      return true;
     } catch (error) {
-      console.log(error);
       return "Server error";
     }
   }

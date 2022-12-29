@@ -6,7 +6,12 @@ export default class HomeController extends Controller {
     // 获取到客户端传过来的参数
     const { username = '', password = '' } = ctx.request.body;
     if (username !== '' && password !== '') {
-      const data = await app.mysql.get('user', { username, password });
+      const data = await ctx.model.User.findAll({
+        where: {
+          username,
+          password,
+        },
+      });
       if (data) {
         const token = app.jwt.sign({
           username,
