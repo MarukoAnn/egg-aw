@@ -31,12 +31,7 @@ export default class NovelTypeService extends BaseService {
 		return result === true;
 	}
 	// 更新数据
-	public async updateType(
-		id: number,
-		typeName: string,
-		typeValue: string,
-		typeSex: string
-	) {
+	public async updateType(id: number, typeName: string, typeValue: string, typeSex: string) {
 		const result: boolean | string = await this._edit('NovelType', {
 			id,
 			typeName,

@@ -5,10 +5,7 @@ export default class NovelTypeController extends BaseController {
 	public async queryPageNovelTypeList() {
 		const { ctx } = this;
 		const { count, page } = ctx.request.body;
-		const novelTypeList = await ctx.service.novelTypeService.findPageAll(
-			count,
-			page
-		);
+		const novelTypeList = await ctx.service.novelTypeService.findPageAll(count, page);
 		this.success(novelTypeList);
 	}
 	// 查询小说类型数据
@@ -21,11 +18,7 @@ export default class NovelTypeController extends BaseController {
 	public async addNovelTypeInfo() {
 		const { ctx } = this;
 		const { typeName, typeValue, typeSex } = ctx.request.body;
-		const isSuccess = await ctx.service.novelTypeService.addType(
-			typeName,
-			typeValue,
-			typeSex
-		);
+		const isSuccess = await ctx.service.novelTypeService.addType(typeName, typeValue, typeSex);
 		console.log('isSuccess', isSuccess);
 		if (isSuccess) {
 			this.success();
