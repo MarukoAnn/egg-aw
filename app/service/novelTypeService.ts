@@ -1,4 +1,4 @@
-import BaseService from './base';
+import BaseService from './base'
 
 export default class NovelTypeService extends BaseService {
 	// 查询列表
@@ -6,20 +6,20 @@ export default class NovelTypeService extends BaseService {
 		const novelTypeList = await this._findPageALl('NovelType', {
 			count,
 			page
-		});
+		})
 		if (novelTypeList !== null) {
-			const { count, rows } = novelTypeList;
-			return { totalCount: count, data: rows };
+			const { count, rows } = novelTypeList
+			return { totalCount: count, data: rows }
 		}
-		return [];
+		return []
 	}
 	// 查询列表
 	public async findAll() {
-		const novelTypeList = await this._findAll('NovelType');
+		const novelTypeList = await this._findAll('NovelType')
 		if (novelTypeList !== null) {
-			return novelTypeList;
+			return novelTypeList
 		}
-		return [];
+		return []
 	}
 	// 新增数据
 	public async addType(typeName: string, typeValue: string, typeSex: string) {
@@ -27,8 +27,8 @@ export default class NovelTypeService extends BaseService {
 			typeName,
 			typeValue,
 			typeSex
-		});
-		return result === true;
+		})
+		return result === true
 	}
 	// 更新数据
 	public async updateType(id: number, typeName: string, typeValue: string, typeSex: string) {
@@ -37,12 +37,12 @@ export default class NovelTypeService extends BaseService {
 			typeName,
 			typeValue,
 			typeSex
-		});
-		return result === true;
+		})
+		return result === true
 	}
 	// 删除数据
 	public async deleteType(id: number) {
-		const result: boolean | string = await this._delete('NovelType', id);
-		return result === true;
+		const result: boolean | string = await this._delete('NovelType', id)
+		return result === true
 	}
 }
